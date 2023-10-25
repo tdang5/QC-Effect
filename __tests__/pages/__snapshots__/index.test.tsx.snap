@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Something should something 1`] = `
+<div>
+  <main
+    class="css-4ufsix"
+  >
+    Hello
+  </main>
+</div>
+`;
