@@ -14,12 +14,12 @@ export default function Home() {
         <Grid container justifyContent='center' spacing={20}>
           <Grid item>
             <Box sx={{ border: 'solid 1px black' }}>
-              I need Content
+              I need lighting
             </Box>
           </Grid>
           <Grid item>
             <Box sx={{ border: 'solid 1px black' }}>
-              I need a space
+              I need effects
             </Box>
           </Grid>
         </Grid>
