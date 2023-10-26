@@ -8,7 +8,7 @@ describe('Something', () => {
     });
     it('test 2', () => {
         render(<Home />);
-        expect(screen.getByText("Get started by editing")).toBeInTheDocument();
+        expect(screen.getByText("World-Class Special Effects")).toBeInTheDocument();
     });
 
 });
