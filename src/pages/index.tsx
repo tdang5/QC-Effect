@@ -12,7 +12,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Main>
-        QC Effects
+        World Class Special Effects
       </Main>
     </>
   )

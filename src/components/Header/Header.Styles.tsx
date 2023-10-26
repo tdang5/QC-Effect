@@ -1,5 +1,5 @@
 import styled from "@emotion/styled"
-import { Grid } from "@mui/material";
+import { Button, Grid } from "@mui/material";
 import Link from "next/link";
 
 
@@ -12,9 +12,9 @@ export const Nav = styled.nav(() => ({
 
 export const CustomLink = styled(Link)(() => ({
     textDecoration: 'none',
-    color: 'Black',
     fontSize: 15,
-    padding: '0px 10px 0px 10px'
+    padding: '0px 10px 0px 10px',
+    color: 'black'
 }));
 
 export const Logo = styled.img(() => ({
@@ -24,3 +24,19 @@ export const Logo = styled.img(() => ({
 export const FlexGrid = styled(Grid)(() => ({
     display: 'flex',
 }));
+
+export const BorderButton = styled.a(() => ({
+    color: '#FAA94A',
+    border: 'solid 1px #FAA94A',
+    borderRadius: 15,
+    padding: '8px 10px 8px 15px',
+    fontWeight: 'bold',
+    alignItems: 'center',
+    display: 'flex',
+    cursor: 'pointer',
+    [`:hover`]: {
+        color: 'white',
+        background: '#FAA94A',
+    }
+}));
+
