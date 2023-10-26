@@ -1,19 +1,29 @@
-import Head from 'next/head'
-import { Main } from '../styles/Index.Styles'
+import { Box, Grid } from '@mui/material'
+import { Header, Main } from '../styles/Index.Styles'
+import Contact from '../components/Contact/Contact'
 
 
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>QC Effects</title>
-        <meta name="description" content="" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <Main>
-        World Class Special Effects
+        <Header>
+          World-Class Special Effects
+        </Header>
+        <Grid container justifyContent='center' spacing={20}>
+          <Grid item>
+            <Box sx={{ border: 'solid 1px black' }}>
+              I need Content
+            </Box>
+          </Grid>
+          <Grid item>
+            <Box sx={{ border: 'solid 1px black' }}>
+              I need a space
+            </Box>
+          </Grid>
+        </Grid>
       </Main>
+      <Contact />
     </>
   )
 }

@@ -17,13 +17,8 @@ export const CustomLink = styled(Link)(() => ({
     color: 'black'
 }));
 
-export const Logo = styled.img(() => ({
-    height: 150
-}));
 
-export const FlexGrid = styled(Grid)(() => ({
-    display: 'flex',
-}));
+
 
 export const BorderButton = styled.a(() => ({
     color: '#FAA94A',

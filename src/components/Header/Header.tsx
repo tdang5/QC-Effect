@@ -1,7 +1,8 @@
-import { CustomLink, Nav, Logo, FlexGrid, BorderButton } from "./Header.Styles"
+import { CustomLink, Nav, BorderButton } from "./Header.Styles"
 import logo from "../../../public/QCFX Black.png"
 import { Grid } from "@mui/material"
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import { FlexGrid, Logo } from "../common/Styles";
 
 export default function Header() {
     return (
