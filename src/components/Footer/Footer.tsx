@@ -4,7 +4,7 @@ import { Logo } from "../common/Styles"
 export default function Footer() {
     return (
         <FooterContainer>
-            <Logo src={logo.src} />
+            <Logo data-testid='footer-logo' src={logo.src} />
         </FooterContainer>
     )
 }
