@@ -2,11 +2,17 @@ import { Box, Divider, Grid, TextField } from "@mui/material";
 import { CustomButton, FlexGrid } from "../common/Styles";
 import SendIcon from '@mui/icons-material/Send';
 import React from "react";
-import { PatternFormat, NumberFormatValues } from "react-number-format";
 import { Controller, useForm } from "react-hook-form";
 import CustomAlert from "../common/CustomAlert";
+import PhoneNumberFormat from "../PhoneNumberFormat/PhoneNumberFormat";
 
-type FormData = {
+export enum data {
+    Name = 'Name',
+    Email = 'Email',
+    Phone = 'Phone',
+    Message = 'Message'
+}
+export type FormData = {
     name: string,
     email: string,
     phone: string,
@@ -14,32 +20,8 @@ type FormData = {
 }
 
 export default function Contact() {
-    const [pattern, setPattern] = React.useState('### #######');
-    const { register, setValue, clearErrors, handleSubmit, formState: { errors }, control } = useForm<FormData>();
-    const handlePhone = (val: NumberFormatValues) => {
-        setValue('phone', val.value.toString());
-        clearErrors('phone');
-        switch (val.value.toString().length) {
-            case 0:
-                setPattern('### #######')
-                break;
-            case 1:
-                setPattern('(### #######')
-                break;
-            case 3:
-                setPattern('(### #######')
-                break;
-            case 4:
-                setPattern('(###) #######')
-                break;
-            case 6:
-                setPattern('(###) #######')
-                break;
-            case 7:
-                setPattern('(###) ###-####')
-                break;
-        };
-    };
+    const { register, handleSubmit, setValue, clearErrors, formState: { errors }, control } = useForm<FormData>();
+
     const onSubmit = handleSubmit(({ name, email, phone, message }) => {
         console.log(name, email, phone, message);
     });
@@ -96,14 +78,7 @@ export default function Contact() {
                             </Grid>
                             <Grid item lg={12}>
                                 <Controller control={control} name='phone' rules={{ required: true, minLength: 10 }} render={() =>
-                                    <PatternFormat
-                                        fullWidth
-                                        format={pattern}
-                                        customInput={TextField}
-                                        label="Phone Number"
-                                        displayType="input"
-                                        onValueChange={(val) => handlePhone(val)}
-                                    />
+                                    <PhoneNumberFormat setValue={setValue} clearErrors={clearErrors} />
                                 } />
                                 {errors?.phone?.type === 'required' &&
                                     <CustomAlert>Phone Number is Required</CustomAlert>
